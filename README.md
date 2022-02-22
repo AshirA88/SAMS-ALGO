@@ -1,5 +1,5 @@
 # SAMS-ALGO
-## Project Handeled by Manali and Rohit
+## Project Handeled by Ashir and Atharva
 ### Prject Scope
 Goal is to deploy a system that is capable to register attendances of the
 students and faculties and update the attendance over to a remote server/local
