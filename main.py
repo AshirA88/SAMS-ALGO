@@ -1,0 +1,7 @@
+# This is the main code of SAMS-Fingerprint
+
+def main():
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    main()
