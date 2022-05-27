@@ -18,6 +18,8 @@ db = mysql.connector.connect(
   database="sams"
 )
 
+check = 0
+
 curr_date = date.today()        #date
 print("Curent Date :=",curr_date)
 
@@ -59,8 +61,8 @@ if(check==1):
       for (rollno,timestamp,date) in Cursor4:          
           if(date==curr_date):
             attendee = 1
-            insert = ("UPDATE record SET id = %s, attendee = %s, timestamp = %s, date = %s WHERE id = %s")        
-            record = (rollno, attendee, timestamp, date, rollno)
+            insert = ("UPDATE record SET id = %s, attendee = %s, timestamp = %s, date = %s WHERE id = %s AND date = %s")        
+            record = (rollno, attendee, timestamp, date, rollno, date)
             Cursor5.execute(insert, record)
             db.commit()
       print("Updation Completed")
