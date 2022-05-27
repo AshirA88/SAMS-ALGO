@@ -32,6 +32,8 @@ Cursor2 = db.cursor(buffered=True)
 Cursor3 = db.cursor(buffered=True)
 Cursor4 = db.cursor(buffered=True)
 Cursor5 = db.cursor(buffered=True)
+Cursor6 = db.cursor(buffered=True)
+Cursor7 = db.cursor(buffered=True)
 query = ("SELECT id,attendee,timestamp,date FROM record") #fetch data from record
 Cursor1.execute(query)
 for (id,attendee,timestamp,date) in Cursor1:
@@ -65,6 +67,14 @@ if(check==1):
             record = (rollno, attendee, timestamp, date, rollno, date)
             Cursor5.execute(insert, record)
             db.commit()
+            # to increment the total count of attendance
+      query7 = ("SELECT * FROM total") #fetch data from total
+      Cursor7.execute(query7)
+      for (id,total_count) in Cursor7:
+          query6 = ("UPDATE total SET id = 1, total_count = total_count + 1 WHERE id = 1")    #update the total
+          Cursor6.execute(query6)
+          db.commit()
+
       print("Updation Completed")
       quit()
     
