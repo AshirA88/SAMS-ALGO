@@ -68,13 +68,16 @@ def readLine(line, characters):
     if(line==L1):
         if(GPIO.input(C1) == 1):        #1
             print("1")
+            lcd.clear()
             os.system('/bin/python /home/pi/Desktop/SAMS/display.py')
         if(GPIO.input(C2) == 1):        #2
             print("2")
+            lcd.clear()
             os.system('sudo reboot')
             #searchfp()
         if(GPIO.input(C3) == 1):        #3
             print("3")
+            lcd.clear()
             os.system('sudo shutdown -h now')
             #choice()
         if(GPIO.input(C4) == 1):        #A
